@@ -1,0 +1,21 @@
+{
+  "name": "app_exception",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "cd server && npm start",
+    "client": "cd web && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/305371179/app_exception.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/305371179/app_exception/issues"
+  },
+  "homepage": "https://github.com/305371179/app_exception#readme"
+}
