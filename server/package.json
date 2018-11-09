@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "test": "mocha test/unit/index.js",
+    "start": "nodemon --inspect ./bin/www",
+    "debug": "node --inspect-brk ./bin/www",
+    "mongod": "if [[ ! -d 'db' ]]; then\n mkdir 'db'\n fi && mongod --dbpath ./db"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -12,5 +15,9 @@
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
     "morgan": "~1.9.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }

@@ -3,6 +3,7 @@ import { getToken, setToken, removeToken } from '@/utils/auth'
 
 const user = {
   state: {
+    baseUrl: process.env.BASE_API,
     token: getToken(),
     name: '',
     avatar: '',
@@ -17,7 +18,7 @@ const user = {
       state.name = name
     },
     SET_AVATAR: (state, avatar) => {
-      state.avatar = avatar
+      state.avatar = state.baseUrl + avatar
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles
@@ -33,8 +34,11 @@ const user = {
           const data = response.data
           setToken(data.token)
           commit('SET_TOKEN', data.token)
-          resolve()
+          commit('SET_NAME', data.username)
+          commit('SET_AVATAR', data.avatar)
+          resolve(data)
         }).catch(error => {
+          console.log(error)
           reject(error)
         })
       })

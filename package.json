@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd server && npm run test",
+    "start_db": "cd server && npm run mongod",
+    "serve_debug": "cd server && npm run debug",
     "serve": "cd server && npm start",
-    "client": "cd web && npm run dev"
+    "client": "cd web && npm run dev",
+    "build": "cd web && node build/build.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +20,7 @@
   "bugs": {
     "url": "https://github.com/305371179/app_exception/issues"
   },
-  "homepage": "https://github.com/305371179/app_exception#readme"
+  "homepage": "https://github.com/305371179/app_exception#readme",
+  "devDependencies": {
+  }
 }

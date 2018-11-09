@@ -25,3 +25,10 @@ export function logout() {
     method: 'post'
   })
 }
+export function modifyPassword(data = {}) {
+  return request({
+    url: '/user/modify',
+    method: 'post',
+    data
+  })
+}
